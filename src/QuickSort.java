@@ -4,6 +4,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int [] numbers = { 8, 9, 78, 1, 3, 5, 0, 6 };
+        // int [] numbers = { 9, 6, 10, 44, 7, 1, 5, 2 }; // Essa deu treta, investigar
         quickSort(numbers, 0, numbers.length -1);
         System.out.println(Arrays.toString(numbers));
     }
@@ -31,6 +32,5 @@ public class QuickSort {
 
         if (i < right)
             quickSort(n, i, right);
-
     }
 }
