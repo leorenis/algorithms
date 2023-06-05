@@ -8,17 +8,13 @@ public class MergeSort {
         System.out.println(Arrays.toString(numbers));
     }
 
-    private static void mergeSort(int[] n, int left, int right) {
-        if (left >= right)
-            return;
+    private static void mergeSort(int[] v, int left, int right) {
+        if (left < right){
+            int middle = left + (right - left) / 2;
+            mergeSort(v, left, middle);
+            mergeSort(v, middle + 1, right);
 
-        else {
-
-            int middle = (left + right) / 2;
-            mergeSort(n, left, middle);
-            mergeSort(n, middle + 1, right);
-
-            merge(n, left, middle, right);
+            merge(v, left, middle, right);
         }
     }
 
@@ -29,7 +25,6 @@ public class MergeSort {
         for (int i = left; i <= right; i++) {
             helper[i] = v[i];
         }
-
 
         int i = left;
         int j = middle + 1;
